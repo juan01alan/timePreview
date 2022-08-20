@@ -1,3 +1,15 @@
+
+                    let now = new Date();
+                    let hour = now.getHours() + ':' + now.getMinutes();
+                setInterval(()=>{
+                
+                    let now = new Date();
+                    let hour = now.getHours() + ':' + now.getMinutes();
+                    document.querySelector('.weatherinnav p').innerHTML = hour;
+                },2000);
+
+
+
 window.addEventListener("DOMContentLoaded",()=>{
     let longitude;
     let latitude;
@@ -16,21 +28,14 @@ window.addEventListener("DOMContentLoaded",()=>{
                     console.log(data.data[0]);
                     const {country_code, timezone, temp, sunrise, sunset,city_name,datetime,clouds} = data.data[0];
                     const {icon, description} = data.data[0].weather;
+                const date = datetime.split("-");
                 
-                    let now = new Date();
-                    let hour = now.getHours() + ':' + now.getMinutes();
-                setInterval(()=>{
-                
-                    let now = new Date();
-                    let hour = now.getHours() + ':' + now.getMinutes();
-                },2000);
 
                     document.querySelector('.humidy').innerHTML = 'Nascer do sol: ' + sunrise;
                     document.querySelector('.humidy2').innerHTML = 'Pôr do sol: ' + sunrise;
 
-                    document.querySelector('.weatherinnav p').innerHTML = hour;
 
-                    document.querySelector(".headerc1 h3").innerHTML = city_name+ ', ' + country_code + ' ' +hour;
+                    document.querySelector(".headerc1 h3").innerHTML = city_name+ ', ' + country_code + ' ' +date[0];
 
                     document.querySelector('.textc1 h3').innerHTML = temp + ' °';
 
