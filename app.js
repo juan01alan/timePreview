@@ -17,7 +17,8 @@ window.addEventListener("DOMContentLoaded",()=>{
                     const {country_code, timezone, temp, sunrise, sunset,city_name,datetime,clouds} = data.data[0];
                     const {icon, description} = data.data[0].weather;
                 
-                    let hour ;
+                    let now = new Date();
+                    let hour = now.getHours() + ':' + now.getMinutes();
                 setInterval(()=>{
                 
                     let now = new Date();
