@@ -1,6 +1,7 @@
 
                     let now = new Date();
                     let hour = now.getHours() + ':' + now.getMinutes();
+                    document.querySelector('.weatherinnav p').innerHTML = hour;
                 setInterval(()=>{
                 
                     let now = new Date();
