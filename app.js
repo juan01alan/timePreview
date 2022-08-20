@@ -1,11 +1,11 @@
 
-                    let now = new Date();
-                    let hour = now.getHours() + ':' + now.getMinutes();
+                    let date = new Date();
+                    let hour = date.getHours() + ':' + date.getMinutes();
                     document.querySelector('.weatherinnav p').innerHTML = hour;
                 setInterval(()=>{
                 
-                    let now = new Date();
-                    let hour = now.getHours() + ':' + now.getMinutes();
+                    date = new Date();
+                    let hour = date.getHours() + ':' + date.getMinutes();
                     document.querySelector('.weatherinnav p').innerHTML = hour;
                 },2000);
 
