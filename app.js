@@ -1,4 +1,4 @@
-window.addEventListener("load",()=>{
+window.addEventListener("DOMContentLoaded",()=>{
     let longitude;
     let latitude;
     const apiKey = 'a2a669a7e02640bd9844dbde2e25de5a'
