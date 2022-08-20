@@ -16,14 +16,20 @@ window.addEventListener("load",()=>{
                     console.log(data.data[0]);
                     const {country_code, timezone, temp, sunrise, sunset,city_name,datetime,clouds} = data.data[0];
                     const {icon, description} = data.data[0].weather;
-                    const hour = datetime.split('-');
+                
+                    let hour ;
+                setInterval(()=>{
+                
+                    let now = new Date();
+                    let hour = now.getHours() + ':' + now.getMinutes();
+                },2000);
 
                     document.querySelector('.humidy').innerHTML = 'Nascer do sol: ' + sunrise;
                     document.querySelector('.humidy2').innerHTML = 'Pôr do sol: ' + sunrise;
 
-                    document.querySelector('.weatherinnav p').innerHTML = hour[2];
+                    document.querySelector('.weatherinnav p').innerHTML = hour;
 
-                    document.querySelector(".headerc1 h3").innerHTML = city_name+ ', ' + country_code + ' ' +hour[2];
+                    document.querySelector(".headerc1 h3").innerHTML = city_name+ ', ' + country_code + ' ' +hour;
 
                     document.querySelector('.textc1 h3').innerHTML = temp + ' °';
 
@@ -35,7 +41,7 @@ window.addEventListener("load",()=>{
                     document.getElementById('iconheader').href = 'https://www.weatherbit.io/static/img/icons/'+icon+'.png';
                 })
         });
-        //document.querySelector(".cityname").innerHTML= 'Aguarde...';
+        document.querySelector(".headerc1 h3").innerHTML= 'Ative o seu GPS';
         //document.querySelector("img .icon").style.display = 'none';
     } 
 });
